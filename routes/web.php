@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IngredientsController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReceiptsController;
@@ -33,6 +34,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/receipts', [ReceiptsController::class, 'index'])->name('receipts.index');
     Route::get('/receipts/{receipt_id}', [ReceiptsController::class, 'show'])->name('receipts.show');
+
+    Route::get('/ingedients', [IngredientsController::class, 'index'])->name('ingredients.index');
 });
 
 require __DIR__.'/auth.php';
