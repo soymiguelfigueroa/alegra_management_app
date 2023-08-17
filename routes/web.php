@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReceiptsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/orders', [OrdersController::class, 'index'])->name('orders.index');
+
+    Route::get('/receipts', [ReceiptsController::class, 'index'])->name('receipts.index');
+    Route::get('/receipts/{receipt_id}', [ReceiptsController::class, 'show'])->name('receipts.show');
 });
 
 require __DIR__.'/auth.php';
