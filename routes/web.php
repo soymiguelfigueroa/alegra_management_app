@@ -3,6 +3,7 @@
 use App\Http\Controllers\IngredientsController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PurchasesController;
 use App\Http\Controllers\ReceiptsController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,7 +36,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/receipts', [ReceiptsController::class, 'index'])->name('receipts.index');
     Route::get('/receipts/{receipt_id}', [ReceiptsController::class, 'show'])->name('receipts.show');
 
-    Route::get('/ingedients', [IngredientsController::class, 'index'])->name('ingredients.index');
+    Route::get('/ingredients', [IngredientsController::class, 'index'])->name('ingredients.index');
+
+    Route::get('/purchases', [PurchasesController::class, 'index'])->name('purchases.index');
 });
 
 require __DIR__.'/auth.php';
